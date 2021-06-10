@@ -8,13 +8,11 @@
 import Foundation
 import SpriteKit
 
-extension GameScene
-{
-    func createBorders()
-    {
+extension GameScene {
+    func createBorders() {
         borderRight = SKSpriteNode()
         borderRight.size = CGSize(width: 3, height: self.frame.height)
-        borderRight.position = CGPoint(x: self.frame.width / 2 , y: 0)
+        borderRight.position = CGPoint(x: self.frame.width / 2, y: 0)
         borderRight.physicsBody = SKPhysicsBody(rectangleOf: borderRight.size)
         borderRight.physicsBody?.affectedByGravity = false
         borderRight.physicsBody?.isDynamic = false
@@ -24,10 +22,10 @@ extension GameScene
         borderRight.physicsBody?.friction = 0.0
         borderRight.color = UIColor.black
         borderRight.name = "border"
-        
+
         borderLeft = SKSpriteNode()
         borderLeft.size = CGSize(width: 3, height: self.frame.height)
-        borderLeft.position = CGPoint(x: -self.frame.width / 2 , y: 0)
+        borderLeft.position = CGPoint(x: -self.frame.width / 2, y: 0)
         borderLeft.physicsBody = SKPhysicsBody(rectangleOf: borderLeft.size)
         borderLeft.physicsBody?.affectedByGravity = false
         borderLeft.physicsBody?.isDynamic = false
@@ -37,7 +35,7 @@ extension GameScene
         borderLeft.physicsBody?.friction = 0.0
         borderLeft.color = UIColor.black
         borderLeft.name = "borderLeft"
-        
+
         borderTop = SKSpriteNode()
         borderTop.size = CGSize(width: self.frame.width, height: 3)
         borderTop.position = CGPoint(x: 0, y: yBrickRowStart)
@@ -51,7 +49,7 @@ extension GameScene
         borderTop.physicsBody?.friction = 0.0
         borderTop.color = UIColor.white
         borderTop.name = "border"
-        
+
         borderBottom = SKSpriteNode()
         borderBottom.size = CGSize(width: self.frame.width, height: 3)
         borderBottom.position = CGPoint(x: 0, y: yBrickStart - self.frame.width / 14 - 8 * self.frame.width / 7)
@@ -65,7 +63,7 @@ extension GameScene
         borderBottom.physicsBody?.friction = 1.0
         borderBottom.color = UIColor.white
         borderBottom.name = "borderBottom"
-        
+
         self.addChild(borderTop)
         self.addChild(borderLeft)
         self.addChild(borderRight)
